@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="your.package.name">
+	<!-- ✅ Add SMS Permissions -->
+	<!--<uses-permission android:name="android.permission.RECEIVE_SMS"/>
+	<uses-permission android:name="android.permission.READ_SMS"/>
+	<uses-permission android:name="android.permission.SEND_SMS"/> -->
+	<!-- ✅ Required for Firebase Phone Auth -->
+	<uses-permission android:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+	
+	<application>
+		<activity android:name="com.unity3d.player.UnityPlayerActivity"
+                  android:theme="@style/UnityThemeSelector">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+			<meta-data android:name="unityplayer.UnityActivity" android:value="true" />
+		</activity>
+		
+		<!-- ✅ Enable Firebase SMS Retriever API 
+		<meta-data android:name="com.google.android.gms.auth.api.phone" android:value="true"/> -->
+	</application>
+	<!-- Below section is added customly-->
+	<meta-data android:name="google_analytics_adid_collection_enabled" android:value="false" />
+	<uses-permission android:name="com.google.android.gms.permission.AD_ID" tools:node="remove" />
+</manifest>
